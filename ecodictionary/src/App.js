@@ -1,8 +1,9 @@
-import TableString from './TableString';
-import TableTitle from './TableTitle';
+import TableString from './Table/TableString';
+import TableTitle from './Table/TableTitle';
 import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Header from './Header';
 
 
 const words = [{ id: '1', english: 'footprint', transcription: '[fʊtprɪnt]', russian: 'след' },
@@ -34,7 +35,8 @@ const words = [{ id: '1', english: 'footprint', transcription: '[fʊtprɪnt]', r
 function App() {
   return (
     <div className="App">
-      <Table striped bordered hover variant="dark">
+      <Header />
+      <Table>
         <TableTitle />
         {
           words.map((word) => <TableString id={word.id} english={word.english} transcription={word.transcription} russian={word.russian} />)

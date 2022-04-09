@@ -4,6 +4,7 @@ import { Table } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './Header';
+import CardsPage from './CardsPage';
 
 
 const words = [{ id: '1', english: 'footprint', transcription: '[fʊtprɪnt]', russian: 'след' },
@@ -36,12 +37,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Table>
+      {/* <Table>
         <TableTitle />
         {
           words.map((word) => <TableString id={word.id} english={word.english} transcription={word.transcription} russian={word.russian} />)
         }
-      </Table>
+      </Table> */}
+      <CardsPage words={words} />
     </div>
   );
 }

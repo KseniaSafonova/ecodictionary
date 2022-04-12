@@ -6,9 +6,9 @@
     width: 30%;
     height: 30%;
     margin: 10px;
+    padding: 10px 0px;
 }
 
 .card:hover {
-
     font-weight: bolder;
 }

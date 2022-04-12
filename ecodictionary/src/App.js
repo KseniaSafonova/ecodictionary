@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Table>
+      {/*<Table>
         <TableTitle />
         {
           words.map((word) => <TableString id={word.id} english={word.english} transcription={word.transcription} russian={word.russian} />)

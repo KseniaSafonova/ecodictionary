@@ -4,14 +4,10 @@ import styles from './Table.module.css'
 
 export default function TableString(props) {
     const [pressed, setPressed] = useState(false);
-
-
-    const HandleClick = () => {
-        setPressed(!pressed);
-    }
+    const { id, english, transcription, russian } = props;
 
     const HandleCancel = () => {
-
+        setPressed(!pressed);
     }
     return (
 
@@ -19,26 +15,26 @@ export default function TableString(props) {
             {
                 pressed ?
                     <tr>
-                        <td>{props.id}</td>
-                        <td><input /></td>
-                        <td><input /></td>
-                        <td><input /></td>
+                        <td>{id}</td>
+                        <td><input value={english} /></td>
+                        <td><input value={transcription} /></td>
+                        <td><input value={russian} /></td>
                         <td>
                             <div className={styles.buttonBlock}>
-                                <Button variant="outline-success" onClick={HandleCancel} >Success</Button>
-                                <Button variant="outline-danger">Delete</Button>
+                                <Button variant="outline-success" onClick={() => { setPressed(false) }} >Save</Button>
+                                <Button variant="outline-danger" onClick={HandleCancel}>Cancel</Button>
                             </div>
                         </td>
                     </tr>
                     :
                     <tr>
-                        <td>{props.id}</td>
-                        <td>{props.english}</td>
-                        <td>{props.transcription}</td>
-                        <td>{props.russian}</td>
+                        <td>{id}</td>
+                        <td>{english}</td>
+                        <td>{transcription}</td>
+                        <td>{russian}</td>
                         <td>
                             <div className={styles.buttonBlock}>
-                                <Button variant="outline-warning" onClick={HandleClick} >Edit</Button>
+                                <Button variant="outline-warning" onClick={() => { setPressed(true) }}>Edit</Button>
                                 <Button variant="outline-danger">Delete</Button>
                             </div>
                         </td>
